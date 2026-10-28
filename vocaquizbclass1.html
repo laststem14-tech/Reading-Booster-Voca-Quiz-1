@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Booster 고난도 01회 독해 & 어휘 워크숍 (31-40번)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #FFF5F5 0%, #EBF8FF 50%, #F0FFF4 100%);
+            min-height: 100vh;
+        }
+        .font-jua {
+            font-family: 'Jua', sans-serif;
+        }
+        @keyframes pulse-light {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .animate-pulse-light {
+            animation: pulse-light 2s infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-8px); }
+            40%, 80% { transform: translateX(8px); }
+        }
+        .animate-shake {
+            animation: shake 0.4s ease-in-out;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+
+        /* Fixed modal backdrop styles */
+        #modalOverlay {
+            background-color: rgba(15, 23, 42, 0.65);
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-12">
+
+    <!-- Header / Nav -->
+    <header class="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50 transition-all border-b border-sky-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="app.navHome()">
+                <div class="bg-gradient-to-tr from-sky-400 to-indigo-500 p-2.5 rounded-2xl text-white shadow-lg shadow-sky-200">
+                    <i data-lucide="book-open-check" class="w-7 h-7"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl md:text-2xl font-black text-slate-800 tracking-tight font-jua">Reading Booster 고난도 01회 (31-40번)</h1>
+                    <p class="text-xs text-sky-600 font-semibold">수능 영어 등급 완성 스마트 워크숍</p>
+                </div>
+            </div>
+
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <button id="bgmToggleBtn" onclick="app.toggleBgm()" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-amber-100 text-amber-800 hover:bg-amber-200 text-sm font-bold transition shadow-sm border border-amber-200">
+                    <i id="bgmIcon" data-lucide="music" class="w-4 h-4"></i>
+                    <span id="bgmText" class="hidden sm:inline">BGM OFF</span>
+                </button>
+
+                <button onclick="app.openDashboard()" class="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-bold transition shadow-md shadow-indigo-200">
+                    <i data-lucide="layout-dashboard" class="w-4 h-4"></i>
+                    <span>교사 대시보드</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main id="appContainer" class="max-w-6xl mx-auto px-4 mt-6">
+        <!-- Dynamic Content Injected via JS -->
+    </main>
+
+    <!-- Global Modal Container -->
+    <div id="modalOverlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div id="modalContent" class="bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl transform transition-all border-4 border-sky-200">
+            <!-- Modal content -->
+        </div>
+    </div>
+
+    <!-- Application Script -->
+    <script>
+        const passagesData = [
+            {
+                id: "p31",
+                num: 31,
+                title: "31번 지문",
+                category: "진화/심리",
+                badgeColor: "bg-blue-100 text-blue-800 border-blue-200",
+                text: `One major threat to survival throughout human history has been infectious disease. To minimize the risk of infection, humans evolved emotional and behavioral responses aimed at avoiding potential sources of pathogens. One such response is disgust, a powerful emotion that motivates people to stay away from contaminated objects, spoiled food, or bodily fluids. Disgust serves as part of a broader behavioral immune system, which acts to prevent disease before it enters the body. Unlike the biological immune system that fights infections internally, the behavioral immune system operates through perception and action. By feeling disgusted by things associated with disease, individuals reduce their exposure to harmful agents. This emotional system, however, is not perfect; it sometimes overgeneralizes and triggers avoidance in situations where there is little real danger. Such false alarms may seem inefficient, but they reflect an evolutionary strategy that favors caution over omission when survival is at stake.`,
+                sampleSummary: "인간은 감염병 위험을 줄이기 위해 혐오감과 같은 행동 면역계를 진화시켰으며, 생존이 걸려 있을 때 오신호가 발생하더라도 빠뜨리는 오류보다 조심을 택하는 진화적 전략을 취한다.",
+                vocab: [
+                    { word: "infectious", options: ["전염성의", "면역의", "치명적인", "일시적인"], answer: 0 },
+                    { word: "pathogen", options: ["병원균", "백신", "상처", "항체"], answer: 0 },
+                    { word: "disgust", options: ["혐오감/혐오", "기쁨", "공포", "동정심"], answer: 0 },
+                    { word: "contaminated", options: ["오염된", "정화된", "신선한", "보호된"], answer: 0 },
+                    { word: "immune system", options: ["면역계", "신경계", "소화계", "순환계"], answer: 0 },
+                    { word: "perception", options: ["지각/인식", "행동", "유전자", "기억"], answer: 0 },
+                    { word: "overgeneralizes", options: ["과잉 일반화하다", "구체화하다", "축소하다", "무시하다"], answer: 0 },
+                    { word: "omission", options: ["생략/빠뜨림", "주의", "포함", "방지"], answer: 0 },
+                    { word: "at stake", options: ["위태로운/걸려있는", "안전한", "확실한", "성공적인"], answer: 0 },
+                    { word: "caution", options: ["조심/주의", "낙관", "효율성", "거절"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 본문에서 설명하는 '행동 면역계(behavioral immune system)'의 특징은?",
+                        options: ["체내에서 병원균과 직접 싸우는 생물학적 면역 체계이다.", "지각과 행동을 통해 감염원이 체내에 들어오기 전에 예방한다.", "오직 성인에게만 발달하는 후천적 신체 기전이다.", "실제 위험이 있는 상황에서만 완벽하게 작동한다."],
+                        answer: 1,
+                        rationale: "지문의 'acts to prevent disease before it enters the body... operates through perception and action'에서 설명하듯, 행동 면역계는 지각과 행동을 통해 감염을 사전 차단합니다."
+                    },
+                    {
+                        question: "2. 혐오감(disgust)이라는 감정 반응이 생존에 기여하는 방식은?",
+                        options: ["오염된 물체나 병원균과의 접촉 및 노출을 줄여준다.", "체내 백신 생성을 촉진하여 병을 치료한다.", "식욕을 증진시켜 영양 공급을 돕는다.", "타인과의 사회적 유대를 강화한다."],
+                        answer: 0,
+                        rationale: "지문의 'motivates people to stay away from contaminated objects... reduce their exposure to harmful agents'에 근거합니다."
+                    },
+                    {
+                        question: "3. 빈칸에 들어갈 글의 요지는?",
+                        options: ["caution (조심/주의)", "rejection (거절)", "optimism (낙관)", "efficiency (효율성)"],
+                        answer: 0,
+                        rationale: "생존이 걸려 있을 때 약간의 허위 경보가 발생하더라도 위험을 놓치는 것보다 조심하는 편이 진화적으로 유리하다는 내용입니다."
+                    }
+                ],
+                scaffoldingKeywords: ["행동 면역계", "혐오감(Disgust)", "조심(Caution)"]
+            },
+            {
+                id: "p32",
+                num: 32,
+                title: "32번 지문",
+                category: "조직/리더십",
+                badgeColor: "bg-emerald-100 text-emerald-800 border-emerald-200",
+                text: `When it comes to bad bosses, second only to the abusive cruel boss is the manager who tries to please everyone. These leaders falsely believe that if they can just get all of their people to like them, then things will be okay. They lack the courage to make hard decisions and face their people with bad news because they fear disappointing anyone. Leaders who actively work to get their people to like them usually end up building shallow relationships with their people with special favors and false promises. Because they use gimmicks to manipulate people, they create no real loyalty and end up self-destructing when their little house of cards begins to fall.`,
+                sampleSummary: "모두를 만족시키려는 상사는 두려움 때문에 단단한 결정을 내리지 못하고 눈속임과 거짓 약속으로 피상적 관계만 만들어 결국 자멸하게 된다.",
+                vocab: [
+                    { word: "abusive", options: ["학대하는/남용하는", "친절한", "유능한", "합리적인"], answer: 0 },
+                    { word: "second only to", options: ["~에 다음가는", "가장 뛰어난", "전혀 무관한", "우수한"], answer: 0 },
+                    { word: "disappointing", options: ["실망시키는", "격려하는", "칭찬하는", "설득하는"], answer: 0 },
+                    { word: "shallow", options: ["피상적인/얕은", "깊은", "진실된", "영구적인"], answer: 0 },
+                    { word: "gimmick", options: ["술책/눈속임", "진심", "전략적 지원", "정직"], answer: 0 },
+                    { word: "manipulate", options: ["조종하다/조작하다", "존중하다", "방치하다", "보호하다"], answer: 0 },
+                    { word: "loyalty", options: ["충성심/의리", "배신", "경쟁심", "의구심"], answer: 0 },
+                    { word: "self-destructing", options: ["자멸하는", "성장하는", "단합하는", "승진하는"], answer: 0 },
+                    { word: "house of cards", options: ["사상누각", "견고한 성", "공정한 제도", "평화로운 가정"], answer: 0 },
+                    { word: "courage", options: ["용기", "두려움", "지혜", "욕심"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 본문에서 가학적인 상사 다음으로 나쁜 상사로 지목된 유형은?",
+                        options: ["모든 사람의 기분을 맞추려고 노력하는 매니저", "너무 까다롭고 과도한 요구를 하는 매니저", "직원들과 전혀 소통하지 않는 매니저", "공평하지 않게 편애를 일삼는 매니저"],
+                        answer: 0,
+                        rationale: "첫 문장의 'second only to the abusive cruel boss is the manager who tries to please everyone'에 명시되어 있습니다."
+                    },
+                    {
+                        question: "2. 모두에게 호감을 사려는 리더들이 힘든 결정을 내리지 못하는 근본적 이유는?",
+                        options: ["누군가를 실망시키는 것을 두려워하기 때문에", "회사에 대한 정보가 부족하기 때문에", "상위 경영진의 압박이 너무 심해서", "직원들의 역량을 신뢰하지 않기 때문에"],
+                        answer: 0,
+                        rationale: "지문의 'lack the courage to make hard decisions... because they fear disappointing anyone'에 나타나 있습니다."
+                    },
+                    {
+                        question: "3. 술책과 거짓 약속으로 직원들을 조종하려는 리더의 결말은?",
+                        options: ["진정한 충성심을 얻지 못하고 결국 자멸하게 된다.", "회사 내에서 장기적으로 강력한 권력을 유지한다.", "직원들과 깊고 신뢰 있는 관계를 맺는다.", "조직의 생산성을 극대화시킨다."],
+                        answer: 0,
+                        rationale: "마지막 문장 'create no real loyalty and end up self-destructing'에서 확인할 수 있습니다."
+                    }
+                ],
+                scaffoldingKeywords: ["모두를 만족시키려는 상사", "피상적 관계", "자멸(Self-destructing)"]
+            },
+            {
+                id: "p33",
+                num: 33,
+                title: "33번 지문",
+                category: "마케팅/경영",
+                badgeColor: "bg-purple-100 text-purple-800 border-purple-200",
+                text: `Acquiring new customers is one of the most expensive tasks in marketing. It often requires large investments in advertising, promotional incentives, and sales efforts. Despite the appeal of winning over new buyers, marketers should first consider how to improve profitability using existing resources. One effective strategy is to build deeper relationships with current customers. This not only reduces customer acquisition costs but also increases overall customer value. Returning customers tend to spend more over time, are easier to serve, and may advocate for the brand, reducing the need for constant promotional spending. For example, satisfied customers are more likely to respond to cross-selling offers, participate in loyalty programs, and recommend the product to peers. Instead of investing heavily in campaigns that target strangers, companies that nurture relationships with current customers often see better returns and stronger brand loyalty. In a mature market, where most people already have preferences, this approach can be more sustainable and cost-effective in the long run.`,
+                sampleSummary: "신규 고객 유치보다 기존 고객과 깊은 관계를 형성하여 육성하는 것이 마케팅 비용을 절감하고 장기적으로 높은 수익성과 브랜드 로열티를 가져다준다.",
+                vocab: [
+                    { word: "acquiring", options: ["획득하는 것/유치", "포기하는 것", "분석하는 것", "손실"], answer: 0 },
+                    { word: "profitability", options: ["수익성", "비용", "손실", "생산량"], answer: 0 },
+                    { word: "advocate", options: ["옹호하다/지지하다", "비판하다", "외면하다", "경쟁하다"], answer: 0 },
+                    { word: "loyalty program", options: ["고객 우대 프로그램", "신규 고객 할인", "광고 캠페인", "품질 검사"], answer: 0 },
+                    { word: "nurture", options: ["육성하다/양육하다", "파괴하다", "방치하다", "단절하다"], answer: 0 },
+                    { word: "sustainable", options: ["지속 가능한", "일회성의", "불안정한", "비효율적인"], answer: 0 },
+                    { word: "cross-selling", options: ["교차 판매", "덤핑 판매", "할인 판매", "직접 판매"], answer: 0 },
+                    { word: "incentive", options: ["유인책/혜택", "벌금", "제약", "세금"], answer: 0 },
+                    { word: "mature market", options: ["성숙한 시장", "신생 시장", "쇠퇴한 시장", "독점 시장"], answer: 0 },
+                    { word: "cost-effective", options: ["비용 효율적인", "비용이 많이 드는", "무익한", "불확실한"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 마케팅에서 신규 고객 유치가 지닌 부담은?",
+                        options: ["광고 및 프로모션 등에 막대한 비용 투자가 필요하다.", "기존 고객들의 거센 반발을 유발한다.", "제품의 품질을 떨어뜨리는 원인이 된다.", "법적인 제약이 매우 엄격하다."],
+                        answer: 0,
+                        rationale: "첫 두 문장 'one of the most expensive tasks... requires large investments in advertising'에 제시되어 있습니다."
+                    },
+                    {
+                        question: "2. 기존 고객과 깊은 관계를 맺을 때 얻을 수 있는 장점이 아닌 것은?",
+                        options: ["고객 유지 및 교차 판매 가능성 증가", "추가 프로모션 비용 지출 절감", "브랜드 옹호 및 주변 추천 효과", "신규 마케팅 부서 전면 폐지"],
+                        answer: 3,
+                        rationale: "기존 고객 케어는 마케팅 효율성을 높이는 것이지 마케팅 부서 전면 폐지와는 무관합니다."
+                    },
+                    {
+                        question: "3. 빈칸에 들어갈 가장 적절한 수익성 개선 전략은?",
+                        options: ["build deeper relationships with current customers", "expand into related product categories", "offer generous discounts to new customers", "adopt promotional strategies used by competitors"],
+                        answer: 0,
+                        rationale: "지문의 핵심 요지인 기존 고객과의 관계 육성(nurture relationships with current customers)에 대한 내용입니다."
+                    }
+                ],
+                scaffoldingKeywords: ["기존 고객(Current customers)", "브랜드 로열티", "비용 효율성"]
+            },
+            {
+                id: "p34",
+                num: 34,
+                title: "34번 지문",
+                category: "역사/지리",
+                badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-200",
+                text: `Why is it that the world is always represented in such a way that Europe and Asia and North America are at the top, and Australia and Antarctica are at the bottom? This is a matter of convention. While it is logical to use the Earth's two poles as top and bottom of any world map, nothing in nature specifies that the North Pole should be at the top of the map and the South Pole at the bottom. What is now universal practice developed from the work of the earliest cartographers, who lived in the Northern Hemisphere and started at the top of their page. Most of what was to be discovered turned out to lie to the east, west, and south of their abodes, and so Africa, South America, and Australia came to occupy the bottom half of the evolving world map.`,
+                sampleSummary: "세계 지도에서 북반구가 상단에 위치하게 된 것은 자연 법칙이 아니라 북반구에 거주했던 초기 지도 제작자들의 관습과 작성 습관에서 비롯된 결과이다.",
+                vocab: [
+                    { word: "represented", options: ["표현된/묘사된", "숨겨진", "지워진", "창조된"], answer: 0 },
+                    { word: "convention", options: ["관습/관례", "법률", "발명", "과학적 사실"], answer: 0 },
+                    { word: "specifies", options: ["명시하다/지정하다", "부정하다", "감추다", "혼동하다"], answer: 0 },
+                    { word: "cartographer", options: ["지도 제작자", "탐험가", "천문학자", "지질학자"], answer: 0 },
+                    { word: "Northern Hemisphere", options: ["북반구", "남반구", "적도", "극지방"], answer: 0 },
+                    { word: "abodes", options: ["거주지/거처", "여행지", "작업실", "고향"], answer: 0 },
+                    { word: "occupy", options: ["차지하다/점유하다", "비우다", "파괴하다", "건설하다"], answer: 0 },
+                    { word: "evolving", options: ["발전하는/진화하는", "퇴보하는", "고정된", "소멸하는"], answer: 0 },
+                    { word: "universal", options: ["보편적인/보편의", "특수한", "일시적인", "지역적인"], answer: 0 },
+                    { word: "poles", options: ["극(북극/남극)", "적도", "대륙", "해협"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 세계 지도에서 북반구가 위쪽, 남반구가 아래쪽에 위치하는 근본적 이유는?",
+                        options: ["자연 법칙에 의해 지구가 원래 그렇게 규정되어 있어서", "초기 지도 제작자들의 위치와 습관에서 비롯된 관습 때문에", "남반구 대륙들의 크기가 상대적으로 너무 작아서", "지구 자전축의 기울기 때문"],
+                        answer: 1,
+                        rationale: "지문의 'This is a matter of convention... developed from the work of the earliest cartographers'에서 인위적 관습임을 설명합니다."
+                    },
+                    {
+                        question: "2. 초기 지도 제작자들의 지리적 환경이 지도의 배치에 미친 영향은?",
+                        options: ["북반구에 살며 종이 위쪽부터 그리기 시작했고 미지의 땅이 남/동/서쪽에 위치했기 때문에", "남극을 먼저 발견한 후 북극을 나중에 그렸기 때문에", "유럽 왕실의 강요에 의해 지도를 정반대로 뒤집었기 때문에", "바다의 수심을 기준으로 표기했기 때문에"],
+                        answer: 0,
+                        rationale: "지문의 'lived in the Northern Hemisphere and started at the top of their page... discovered turned out to lie to the east, west, and south'에 나타나 있습니다."
+                    },
+                    {
+                        question: "3. 빈칸에 들어갈 초기 지도 제작자들의 행동 방식은?",
+                        options: ["who started at the top of their page", "who just learned from books", "who were highly respected by villagers", "whose sense of direction was not perfect"],
+                        answer: 0,
+                        rationale: "북반구에 살던 지도 제작자들이 종이의 상단부터 지도를 그려나간 습관을 지적합니다."
+                    }
+                ],
+                scaffoldingKeywords: ["지도 표기 관습", "북반구 지도 제작자", "상단 시작 습관"]
+            },
+            {
+                id: "p35",
+                num: 35,
+                title: "35번 지문",
+                category: "의학/심리",
+                badgeColor: "bg-amber-100 text-amber-800 border-amber-200",
+                text: `The most common phobias involve air travel, animals, closed spaces, heights, and witnessing bloody injury. ① Exposure to the stimulus almost always provokes an immediate anxiety response and these anxiety responses may include feeling panicky, sweating, and having difficulty breathing. ② Anxious children are often quiet and well-behaved, and thus frequently go unnoticed by their parents. ③ Because the individual experiences anxiety when confronted with these situations, these types of situations are usually avoided. ④ Impairment to the individual may be minimal if the phobic object is easily avoided, but may be considerable if the phobic object is common and cannot be avoided. ⑤ Usually, the individual will recognize that their fear is excessive or unreasonable, but may struggle with finding help for treating their phobia.`,
+                sampleSummary: "공포증은 특정 자극에 대한 즉각적 불안과 회피를 유발하며, 해당 대상이 흔하여 피하기 힘들수록 개인이 겪는 삶의 손상이 커진다.",
+                vocab: [
+                    { word: "phobia", options: ["공포증", "우울증", "불면증", "조현병"], answer: 0 },
+                    { word: "stimulus", options: ["자극", "반응", "치료", "결과"], answer: 0 },
+                    { word: "provokes", options: ["유발하다/자극하다", "진정시키다", "치료하다", "무시하다"], answer: 0 },
+                    { word: "confronted", options: ["직면한/직면하다", "피하다", "수용하다", "잊다"], answer: 0 },
+                    { word: "impairment", options: ["장해/손상", "회복", "향상", "성공"], answer: 0 },
+                    { word: "minimal", options: ["최소의", "최대의", "엄청난", "영구적인"], answer: 0 },
+                    { word: "considerable", options: ["상당한/매우 큰", "사소한", "부차적인", "미미한"], answer: 0 },
+                    { word: "excessive", options: ["과도한", "적절한", "부족한", "합리적인"], answer: 0 },
+                    { word: "unreasonable", options: ["비이성적인/부당한", "논리적인", "당연한", "평범한"], answer: 0 },
+                    { word: "unnoticed", options: ["간과되는/눈에 띄지 않는", "발각되는", "칭찬받는", "지적받는"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 공포증 자극에 노출되었을 때 나타나는 일반적인 신체적 불안 반응은?",
+                        options: ["공황 상태, 식은땀, 호흡 곤란", "극심한 졸음과 식욕 증가", "체온 상승과 근육 이완", "기억력 상실과 환각"],
+                        answer: 0,
+                        rationale: "문장 ①의 'feeling panicky, sweating, and having difficulty breathing'에 언급되어 있습니다."
+                    },
+                    {
+                        question: "2. 공포증 대상이 흔하여 회피하기 어려울 때 환자가 겪는 영향은?",
+                        options: ["개인이 받는 장애/손상의 정도가 매우 상당해진다.", "공포증이 저절로 빠르게 완치된다.", "불안 반응이 오히려 점차 감소한다.", "타인의 도움 없이 스스로 극복하게 된다."],
+                        answer: 0,
+                        rationale: "문장 ④의 'may be considerable if the phobic object is common and cannot be avoided'에서 설명합니다."
+                    },
+                    {
+                        question: "3. 지문의 전체 흐름과 관계없는 문장은?",
+                        options: ["②번 문장", "①번 문장", "③번 문장", "⑤번 문장"],
+                        answer: 0,
+                        rationale: "②번 문장은 일반적인 불안 아동의 행동 특성을 다루고 있어, 공포증 자극과 회피를 다루는 전체 흐름과 무관합니다."
+                    }
+                ],
+                scaffoldingKeywords: ["공포증(Phobia)", "불안 반응", "상황 회피"]
+            },
+            {
+                id: "p36",
+                num: 36,
+                title: "36번 지문",
+                category: "교육/문화",
+                badgeColor: "bg-teal-100 text-teal-800 border-teal-200",
+                text: `Culture plays a fundamental role in shaping how individuals learn. From early childhood, people are immersed in cultural practices that influence their behaviors, beliefs, and approaches to acquiring knowledge.\n\n(A) Fostering respectful and inclusive learning spaces involves more than simply being aware of cultural differences. It requires that teachers thoughtfully interpret learners' actions and needs through a sociocultural lens, continuously adjusting their approaches to respect the dynamic interplay between culture, cognition, and context.\n(B) The traditions and norms that shape learning, however, are not fixed; rather, they continuously evolve as communities face new realities. As a result, culture acts not simply as a backdrop but as an active force that individuals both inherit and reshape throughout their lives.\n(C) Schools, in turn, reflect and reinforce broader societal values. Recognizing that culture is deeply embedded in learning processes encourages educators to create environments that honor diverse experiences and support all learners effectively.`,
+                sampleSummary: "문화는 지속적으로 진화하며 학습에 개입하는 역동적 힘이므로 교사는 사회문화적 관점을 통해 학생의 인지와 맥락을 고려한 포용적 환경을 조성해야 한다.",
+                vocab: [
+                    { word: "fundamental", options: ["근본적인/핵심적인", "부차적인", "일시적인", "표면적인"], answer: 0 },
+                    { word: "immersed", options: ["몰두하는/몰입된", "거부하는", "분리된", "무관심한"], answer: 0 },
+                    { word: "inclusive", options: ["포용적인/포함하는", "배타적인", "독점적인", "차별적인"], answer: 0 },
+                    { word: "interplay", options: ["상호작용", "단절", "갈등", "경쟁"], answer: 0 },
+                    { word: "backdrop", options: ["배경", "주인공", "장애물", "결과"], answer: 0 },
+                    { word: "embedded", options: ["내재된", "제거된", "돌출된", "독립된"], answer: 0 },
+                    { word: "cognition", options: ["인지", "감정", "신체", "운동"], answer: 0 },
+                    { word: "sociocultural", options: ["사회문화적인", "자연과학적인", "개인주의적인", "경제적인"], answer: 0 },
+                    { word: "inherit", options: ["물려받다/계승하다", "포기하다", "파괴하다", "거부하다"], answer: 0 },
+                    { word: "reinforce", options: ["강화하다", "약화시키다", "제거하다", "의문시하다"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 본문에서 설명하는 문화(Culture)의 역동적 성격은?",
+                        options: ["고정되어 있지 않고 공동체의 새로운 현실에 맞춰 계속 진화한다.", "한번 형성되면 절대 변하지 않는 고정된 배경이다.", "학교 교육을 통해서만 전수되는 인위적 규칙이다.", "개인의 학습 능력 발달을 방해하는 요소이다."],
+                        answer: 0,
+                        rationale: "단락 (B)의 'are not fixed; rather, they continuously evolve as communities face new realities'에 밝혀져 있습니다."
+                    },
+                    {
+                        question: "2. 교사가 포용적인 학습 공간을 조성하기 위해 갖춰야 할 자세는?",
+                        options: ["문화, 인지, 맥락 간의 상호작용을 고려해 사회문화적 관점으로 학생을 이해하고 조정함", "모든 문화적 차이를 무시하고 동일한 기준만 적용함", "전통적인 암기식 수업 방식을 고수함", "문화적 차이를 다루는 교육 과정을 전면 폐지함"],
+                        answer: 0,
+                        rationale: "단락 (A)의 'interpret learners' actions and needs through a sociocultural lens'에서 강조합니다."
+                    },
+                    {
+                        question: "3. 주어진 글 다음에 이어질 가장 자연스러운 글의 순서는?",
+                        options: ["(B) - (C) - (A)", "(A) - (C) - (B)", "(B) - (A) - (C)", "(C) - (B) - (A)"],
+                        answer: 0,
+                        rationale: "문화의 역동성과 진화(B) -> 학교의 사회적 가치 반영(C) -> 교사의 구체적 노력(A)으로 연결되는 (B)-(C)-(A)가 정답입니다."
+                    }
+                ],
+                scaffoldingKeywords: ["사회문화적 맥락", "역동적 문화", "포용적 학습 공간"]
+            },
+            {
+                id: "p37",
+                num: 37,
+                title: "37번 지문",
+                category: "역사/예술",
+                badgeColor: "bg-rose-100 text-rose-800 border-rose-200",
+                text: `Many cave paintings can still be seen today, scratched and painted on the walls of caves. No painter alive now could do better. The animals depicted there don't exist any more.\n\n(A) It's rather like when we say "Talk of the devil!" when someone we've been talking about turns up unexpectedly. After all, these animals were their prey, and without them they would starve. So they may have been trying to invent a magic spell.\n(B) Elephants with long, thick coats of hair and great, curving tusks - woolly mammoths - and other Ice Age animals. Why do you think these prehistoric people painted animals on the walls of caves? Just for decoration?\n(C) That doesn't seem likely, because the caves were so dark. Of course we can't be sure, but we think they may have been trying to make magic, believing that painting pictures of animals on the walls would make those animals appear.`,
+                sampleSummary: "선사 시대의 동굴 벽화는 단순한 장식이 아닌 사냥감이 실제로 나타나기를 바라는 주술적 목적과 주문(magic spell)으로 그려졌을 것이다.",
+                vocab: [
+                    { word: "depicted", options: ["묘사된/그려진", "파괴된", "발견된", "조각된"], answer: 0 },
+                    { word: "prehistoric", options: ["선사 시대의", "현대의", "중세의", "미래의"], answer: 0 },
+                    { word: "tusks", options: ["엄니/상아", "날개", "꼬리", "발톱"], answer: 0 },
+                    { word: "woolly mammoth", options: ["털매머드", "공룡", "검치호", "순록"], answer: 0 },
+                    { word: "prey", options: ["사냥감/먹이", "포식자", "도구", "가축"], answer: 0 },
+                    { word: "starve", options: ["굶주리다/굶어 죽다", "사냥하다", "번성하다", "이동하다"], answer: 0 },
+                    { word: "magic spell", options: ["주문/주술", "그림 도구", "무기", "장식품"], answer: 0 },
+                    { word: "decoration", options: ["장식", "주술", "식량", "경고"], answer: 0 },
+                    { word: "unexpectedly", options: ["뜻밖에/갑자기", "예상대로", "천천히", "정기적으로"], answer: 0 },
+                    { word: "turn up", options: ["나타나다", "사라지다", "도망치다", "쓰러지다"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 동굴 벽화에 그려진 동물 그림이 단순한 '장식용'이 아니라고 보는 이유는?",
+                        options: ["동굴 내부가 너무 어두워서 장식의 효과가 없기 때문에", "선사 시대 사람들은 장식 개념을 몰랐기 때문에", "벽화에 사용된 물감이 너무 비쌌기 때문에", "그림이 너무 조잡해서 아무도 보지 않았기 때문에"],
+                        answer: 0,
+                        rationale: "단락 (C)의 'That doesn't seem likely, because the caves were so dark'에서 밝히고 있습니다."
+                    },
+                    {
+                        question: "2. 선사 시대 사람들이 사냥감 동물을 벽화로 그린 주술적 목적은?",
+                        options: ["동물 그림을 그리면 그 사냥감 동물들이 실제로 나타날 것이라 믿었기 때문에", "동물들의 영혼을 달래어 재앙을 막기 위해", "다른 부족에게 자신의 사냥터를 경고하기 위해", "후손들에게 동물의 종류를 교육하기 위해"],
+                        answer: 0,
+                        rationale: "단락 (C)와 (A)에서 'believing that painting pictures... would make those animals appear'로 설명합니다."
+                    },
+                    {
+                        question: "3. 주어진 글 다음에 이어질 자연스러운 글의 순서는?",
+                        options: ["(B) - (C) - (A)", "(A) - (C) - (B)", "(B) - (A) - (C)", "(C) - (B) - (A)"],
+                        answer: 0,
+                        rationale: "멸종된 빙하기 동물 예시(B) -> 장식 목적 부인 및 주술적 추측(C) -> 사냥감 출현을 바라는 주문(A)으로 이어집니다."
+                    }
+                ],
+                scaffoldingKeywords: ["동굴 벽화", "사냥감(Prey)", "주술적 효과(Magic spell)"]
+            },
+            {
+                id: "p38",
+                num: 38,
+                title: "38번 지문",
+                category: "자기계발/심리",
+                badgeColor: "bg-cyan-100 text-cyan-800 border-cyan-200",
+                text: `In today's world, being an expert in a single field is often regarded as the most reliable path to personal and professional success. ① However, this narrow focus can carry a hidden risk that often goes unnoticed. ② Specializing too deeply in one area may gradually limit how we understand problems and restrict the range of solutions we consider. ③ This mental trap, known as the Einstellung effect, causes individuals to repeatedly apply familiar strategies—even when those strategies no longer fit the context or yield effective results. ④ Polymaths, or individuals who deliberately build knowledge across fields, avoid this trap by staying curious and open to new tools, ideas, and perspectives. ⑤ Because they draw on a wide base of knowledge, they are more likely to notice unexpected connections and generate original solutions that narrowly focused experts might easily overlook. In a fast-changing and unpredictable world, this kind of cognitive flexibility is not just an advantage—it has become essential.`,
+                sampleSummary: "단일 분야 전공자는 아인슈텔룽 효과라는 사고의 함정에 빠지기 쉬우나 여러 분야의 지식을 갖춘 박학가들은 인지적 유연성을 바탕으로 창의적 해결책을 만들어낸다.",
+                vocab: [
+                    { word: "Polymath", options: ["박학다식한 사람/박학가", "단일 분야 전문가", "학자", "조련사"], answer: 0 },
+                    { word: "deliberately", options: ["의도적으로/고의로", "우연히", "마지못해", "급격히"], answer: 0 },
+                    { word: "Einstellung effect", options: ["아인슈텔룽 효과", "플라시보 효과", "후광 효과", "피그말리온 효과"], answer: 0 },
+                    { word: "cognitive flexibility", options: ["인지적 유연성", "인지적 경직성", "기억력", "집중력"], answer: 0 },
+                    { word: "overlook", options: ["간과하다", "감시하다", "칭찬하다", "분석하다"], answer: 0 },
+                    { word: "specializing", options: ["전문화하다", "일반화하다", "포기하다", "의문시하다"], answer: 0 },
+                    { word: "reliable", options: ["신뢰할 수 있는", "불안정한", "위험한", "임시의"], answer: 0 },
+                    { word: "yield", options: ["산출하다", "포기하다", "저항하다", "숨기다"], answer: 0 },
+                    { word: "unpredictable", options: ["예측할 수 없는", "명확한", "고정된", "안정적인"], answer: 0 },
+                    { word: "trap", options: ["함정/덫", "기회", "해결책", "도구"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 한 분야에만 지나치게 전문화될 때 빠지기 쉬운 생각의 함정이란?",
+                        options: ["상황에 맞지 않거나 효과가 없는데도 익숙한 전략만 반복 적용하는 현상", "새로운 정보나 기술을 너무 빨리 수용하려는 현상", "자신의 능력을 지나치게 과소평가하여 시도를 포기하는 현상", "타인의 의견에 무조건적으로 동조하는 현상"],
+                        answer: 0,
+                        rationale: "지문의 'causes individuals to repeatedly apply familiar strategies—even when those strategies no longer fit'에 명시되어 있습니다."
+                    },
+                    {
+                        question: "2. 여러 분야의 지식을 쌓는 박학다식한 사람(Polymaths)이 지닌 강점은?",
+                        options: ["광범위한 지식을 바탕으로 뜻밖의 연결고리를 발견하고 창의적 대안을 만듦", "단일 분야 최고 전문가보다 한 우물만 깊게 판다", "기존 방식만을 고집하여 실패 확률을 줄인다", "의사결정 속도를 줄이고 단순 작업만 반복한다"],
+                        answer: 0,
+                        rationale: "지문 후반부 'notice unexpected connections and generate original solutions'에서 강조합니다."
+                    },
+                    {
+                        question: "3. 제시된 보기 문장(Polymaths...)이 들어가기에 가장 적절한 위치는?",
+                        options: ["④번 위치", "①번 위치", "②번 위치", "③번 위치"],
+                        answer: 0,
+                        rationale: "③번 뒤에서 아인슈텔룽 효과를 설명한 뒤 ④번 위치에서 이를 피하는 Polymaths 문장이 들어가는 것이 자연스럽습니다."
+                    }
+                ],
+                scaffoldingKeywords: ["아인슈텔룽 효과", "박학가(Polymaths)", "인지적 유연성"]
+            },
+            {
+                id: "p39",
+                num: 39,
+                title: "39번 지문",
+                category: "환경/에너지",
+                badgeColor: "bg-slate-100 text-slate-800 border-slate-200",
+                text: `Transitioning to renewable energy is crucial for combating climate change, yet it introduces unprecedented spatial challenges. [1] Fossil fuel power plants are geographically concentrated and occupy minimal land area. [2] In contrast, solar and wind installations require vast expanses of land to generate equivalent power. [3] This spatial dispersion frequently triggers fierce land-use conflicts with agriculture and conservation. [4] Resolving these friction points demands integrated spatial planning that balances clean energy expansion with ecosystem preservation.`,
+                sampleSummary: "재생 에너지 전환은 넓은 토지 면적을 필요로 하여 농업 및 보전 지역과의 갈등을 일으키므로 청정 에너지 확대와 생태계 보전을 조화시키는 통합 공간 계획이 필수적이다.",
+                vocab: [
+                    { word: "transitioning", options: ["전환하는 것", "고정하는 것", "파괴하는 것", "연기하는 것"], answer: 0 },
+                    { word: "unprecedented", options: ["전례 없는", "흔한", "과거의", "전형적인"], answer: 0 },
+                    { word: "concentrated", options: ["집중된/밀집된", "분산된", "희석된", "넓은"], answer: 0 },
+                    { word: "expanses", options: ["광활한 공간/면적", "좁은 통로", "건물 내부", "지하"], answer: 0 },
+                    { word: "dispersion", options: ["분산/지리적 확산", "집중", "축소", "단절"], answer: 0 },
+                    { word: "triggers", options: ["유발하다/촉발하다", "억제하다", "진정시키다", "해결하다"], answer: 0 },
+                    { word: "friction", options: ["마찰/갈등", "조화", "협력", "평화"], answer: 0 },
+                    { word: "integrated", options: ["통합된", "분리된", "파편화된", "임시의"], answer: 0 },
+                    { word: "preservation", options: ["보존/보호", "개발", "착취", "오염"], answer: 0 },
+                    { word: "equivalent", options: ["동등한/상응하는", "차이 나는", "압도적인", "미미한"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 재생 에너지 전환 과정에서 대두된 대표적 공간적 도전 과제는?",
+                        options: ["태양광/풍력 발전은 동일 전력 생산을 위해 광활한 토지가 필요함", "기존 화석연료 발전소보다 건립 비용이 100배 높음", "재생 에너지 장비의 수명이 너무 짧음", "도시 내부 설치가 물리적으로 완전 불가능함"],
+                        answer: 0,
+                        rationale: "문장 [2]의 'solar and wind installations require vast expanses of land to generate equivalent power'에 나와 있습니다."
+                    },
+                    {
+                        question: "2. 재생 에너지의 공간적 분산이 일으키는 문제점은?",
+                        options: ["농업 및 환경 보전 지역과의 치열한 토지 이용 갈등 유발", "국가 간 전력 수입 정지", "지하수 오염 급증", "도시 인구의 지방 이주"],
+                        answer: 0,
+                        rationale: "문장 [3]의 'triggers fierce land-use conflicts with agriculture and conservation'에서 입증됩니다."
+                    },
+                    {
+                        question: "3. 지문의 결론에서 제시하는 해법은?",
+                        options: ["청정 에너지 확대와 생태계 보전을 조화시키는 통합 공간 계획", "재생 에너지 개발 사업의 전면 중단", "모든 농경지를 태양광 부지로 변환", "환경 보호 규제의 전면 폐지"],
+                        answer: 0,
+                        rationale: "마지막 문장 'demands integrated spatial planning that balances clean energy expansion with ecosystem preservation'에서 제시합니다."
+                    }
+                ],
+                scaffoldingKeywords: ["재생 에너지", "토지 이용 갈등", "통합 공간 계획"]
+            },
+            {
+                id: "p40",
+                num: 40,
+                title: "40번 지문",
+                category: "사회/심리",
+                badgeColor: "bg-orange-100 text-orange-800 border-orange-200",
+                text: `Studies on social influence indicate that individuals often modify their expressed opinions to match group consensus, even when they internally disagree. This tendency toward compliance is amplified in cohesive groups where social rejection is feared. However, when even a single dissenter voices a dissenting view, group conformity drops precipitously. The presence of an ally validates independent thinking, empowering others to break silence. Thus, while group pressure enforces uniformity, visible dissent acts as a powerful catalyst for authentic expression.`,
+                sampleSummary: "집단 압력이 획일적 동조를 강요하더라도, 단 한 명의 반대자가 이견을 제시하면 획일성이 줄어들고 진정한 자기 표현의 강력한 촉매가 된다.",
+                vocab: [
+                    { word: "consensus", options: ["합의/일치된 의견", "갈등", "분열", "토론"], answer: 0 },
+                    { word: "compliance", options: ["순응/동조", "반항", "독립", "거부"], answer: 0 },
+                    { word: "cohesive", options: ["결속력 있는", "분열된", "느슨한", "적대적인"], answer: 0 },
+                    { word: "dissenter", options: ["반대자", "찬성자", "지도자", "관찰자"], answer: 0 },
+                    { word: "precipitously", options: ["가파르게/급격하게", "점진적으로", "미미하게", "천천히"], answer: 0 },
+                    { word: "conformity", options: ["동조/순응", "개성", "반항", "창의성"], answer: 0 },
+                    { word: "validates", options: ["정당화하다/입증하다", "부정하다", "비판하다", "은폐하다"], answer: 0 },
+                    { word: "catalyst", options: ["촉매/계기", "장애물", "결과", "방해물"], answer: 0 },
+                    { word: "uniformity", options: ["획일성/균일성", "다양성", "혼란", "차별"], answer: 0 },
+                    { word: "authentic", options: ["진정한/진실된", "가짜의", "과장된", "수동적인"], answer: 0 }
+                ],
+                comprehension: [
+                    {
+                        question: "1. 집단 내에서 자신이 동의하지 않더라도 표면적 동조를 하는 근본 이유는?",
+                        options: ["집단으로부터 배척당할지 모른다는 두려움 때문", "자신의 지식이 완벽하지 않다고 믿기 때문", "상금이나 포상을 받기 위해", "리더의 강압적 물리력 때문"],
+                        answer: 0,
+                        rationale: "지문의 'amplified in cohesive groups where social rejection is feared'에서 찾을 수 있습니다."
+                    },
+                    {
+                        question: "2. 단 한 명이라도 이견을 내는 반대자가 나타났을 때 생기는 변화는?",
+                        options: ["집단의 획일적 동조 현상이 급격히 감소한다.", "반대자가 즉시 집단에서 쫓겨난다.", "집단 구성원 간의 소송이 발생한다.", "동조 현상이 이전보다 훨씬 더 강화된다."],
+                        answer: 0,
+                        rationale: "지문의 'when even a single dissenter voices a dissenting view, group conformity drops precipitously'에 근거합니다."
+                    },
+                    {
+                        question: "3. 본문의 요약 알맞은 선지는?",
+                        options: ["(A) uniformity - (B) catalyst", "(A) diversity - (B) barrier", "(A) autonomy - (B) threat", "(A) conflict - (B) resolution"],
+                        answer: 0,
+                        rationale: "마지막 문장 'while group pressure enforces uniformity, visible dissent acts as a powerful catalyst for authentic expression'과 부합합니다."
+                    }
+                ],
+                scaffoldingKeywords: ["집단 순응(Compliance)", "반대자(Dissenter)", "표현의 촉매(Catalyst)"]
+            }
+        ];
+
+        class AudioSystem {
+            constructor() {
+                this.ctx = null;
+                this.bgmInterval = null;
+                this.isBgmPlaying = false;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+
+            playTone(freq, duration, type = 'sine', volume = 0.1) {
+                if (!this.ctx) return;
+                try {
+                    const osc = this.ctx.createOscillator();
+                    const gain = this.ctx.createGain();
+                    osc.type = type;
+                    osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
+                    gain.gain.setValueAtTime(volume, this.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + duration);
+                    osc.connect(gain);
+                    gain.connect(this.ctx.destination);
+                    osc.start();
+                    osc.stop(this.ctx.currentTime + duration);
+                } catch(e){}
+            }
+
+            playCorrect() {
+                this.init();
+                this.playTone(523.25, 0.12, 'triangle', 0.2);
+                setTimeout(() => this.playTone(659.25, 0.15, 'triangle', 0.2), 100);
+                setTimeout(() => this.playTone(783.99, 0.25, 'triangle', 0.25), 200);
+            }
+
+            playWrong() {
+                this.init();
+                this.playTone(220, 0.15, 'sawtooth', 0.2);
+                setTimeout(() => this.playTone(180, 0.25, 'sawtooth', 0.2), 120);
+            }
+
+            playTick() {
+                this.init();
+                this.playTone(800, 0.03, 'sine', 0.05);
+            }
+
+            toggleBgm() {
+                this.init();
+                if (this.isBgmPlaying) {
+                    this.stopBgm();
+                    return false;
+                } else {
+                    this.startBgm();
+                    return true;
+                }
+            }
+
+            startBgm() {
+                this.isBgmPlaying = true;
+                const notes = [261.63, 329.63, 392.00, 523.25, 392.00, 329.63];
+                let step = 0;
+                this.bgmInterval = setInterval(() => {
+                    if (this.isBgmPlaying) {
+                        this.playTone(notes[step % notes.length], 0.4, 'sine', 0.02);
+                        step++;
+                    }
+                }, 600);
+            }
+
+            stopBgm() {
+                this.isBgmPlaying = false;
+                if (this.bgmInterval) clearInterval(this.bgmInterval);
+            }
+        }
+
+        const audioSys = new AudioSystem();
+
+        class App {
+            constructor() {
+                this.currentPassage = null;
+                this.currentStage = 'home';
+                
+                this.vocabIndex = 0;
+                this.vocabScore = 0;
+                this.vocabTimer = null;
+                this.vocabTimeLeft = 10;
+
+                this.compIndex = 0;
+                this.compScore = 0;
+                this.compTimer = null;
+                this.compTimeLeft = 180;
+
+                this.summaryTimer = null;
+                this.summaryTimeLeft = 240;
+
+                this.studentRecords = [
+                    { name: "김민수 (10101)", passage: "31번 지문", vocabScore: "10/10", compScore: "3/3", summary: "인간은 감염 위험을 피하기 위해 혐오감과 행동 면역계를 진화시켰으며, 생존을 위해 빠뜨리는 것보다 조심을 택한다.", date: "10:15 AM" },
+                    { name: "이서연 (10102)", passage: "32번 지문", vocabScore: "9/10", compScore: "3/3", summary: "모두를 만족시키려는 상사는 거짓 약속과 눈속임으로 단기적 호감을 사려 하지만 진정한 충성심을 얻지 못하고 자멸한다.", date: "10:22 AM" },
+                    { name: "박지호 (10103)", passage: "34번 지문", vocabScore: "8/10", compScore: "3/3", summary: "세계 지도에서 북반구가 상단에 위치하는 것은 자연 법칙이 아니라 북반구 초기 지도 제작자들의 시작 습관과 관습 때문이다.", date: "10:30 AM" }
+                ];
+
+                this.init();
+            }
+
+            init() {
+                this.renderHome();
+                lucide.createIcons();
+            }
+
+            toggleBgm() {
+                const playing = audioSys.toggleBgm();
+                const icon = document.getElementById('bgmIcon');
+                const text = document.getElementById('bgmText');
+                if (playing) {
+                    icon.setAttribute('data-lucide', 'volume-2');
+                    text.innerText = "BGM ON";
+                } else {
+                    icon.setAttribute('data-lucide', 'music');
+                    text.innerText = "BGM OFF";
+                }
+                lucide.createIcons();
+            }
+
+            navHome() {
+                this.clearAllTimers();
+                this.currentStage = 'home';
+                this.renderHome();
+            }
+
+            clearAllTimers() {
+                if (this.vocabTimer) clearInterval(this.vocabTimer);
+                if (this.compTimer) clearInterval(this.compTimer);
+                if (this.summaryTimer) clearInterval(this.summaryTimer);
+            }
+
+            renderHome() {
+                const container = document.getElementById('appContainer');
+                container.innerHTML = `
+                    <div class="text-center py-6">
+                        <span class="px-4 py-1.5 rounded-full bg-sky-100 text-sky-700 font-bold text-sm inline-block mb-3 border border-sky-200">
+                            📘 Reading Booster 고난도 01회 교재 원문 (31번 ~ 40번)
+                        </span>
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-slate-800 font-jua tracking-wide mb-3">
+                            학습할 수능 모의고사 지문을 선택하세요!
+                        </h2>
+                        <p class="text-slate-600 max-w-2xl mx-auto text-sm md:text-base">
+                            어휘 퀴즈(10초) → 독해 문제(3분) → 3-Key & 1-Sentence 요약(4분)으로 고난도 독해력을 다져보세요.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                        ${passagesData.map(p => `
+                            <div class="bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition duration-300 border-2 border-slate-100 flex flex-col justify-between hover:-translate-y-1">
+                                <div>
+                                    <div class="flex justify-between items-start mb-3">
+                                        <span class="px-3 py-1 rounded-full text-xs font-bold border ${p.badgeColor}">
+                                            ${p.category}
+                                        </span>
+                                        <span class="text-xs text-slate-400 font-semibold flex items-center">
+                                            <i data-lucide="clock" class="w-3.5 h-3.5 mr-1"></i> 약 10분 소요
+                                        </span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-800 mb-2 font-jua">${p.title}</h3>
+                                    <p class="text-slate-600 text-sm line-clamp-3 mb-6 bg-slate-50 p-3.5 rounded-2xl border border-slate-100 font-serif leading-relaxed italic">
+                                        "${p.text.substring(0, 130)}..."
+                                    </p>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between text-xs text-slate-500 font-semibold px-1">
+                                        <span><i data-lucide="check-circle-2" class="w-3.5 h-3.5 inline text-emerald-500"></i> 어휘 10문항</span>
+                                        <span><i data-lucide="check-circle-2" class="w-3.5 h-3.5 inline text-emerald-500"></i> 독해 3문항</span>
+                                        <span><i data-lucide="check-circle-2" class="w-3.5 h-3.5 inline text-emerald-500"></i> 핵심 요약</span>
+                                    </div>
+                                    <button onclick="app.startPassage('${p.id}')" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-400 to-blue-600 hover:from-sky-500 hover:to-blue-700 text-white font-bold text-base shadow-lg shadow-sky-200 transition flex items-center justify-center space-x-2">
+                                        <span>학습 시작하기</span>
+                                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                lucide.createIcons();
+            }
+
+            startPassage(passageId) {
+                this.currentPassage = passagesData.find(p => p.id === passageId);
+                this.vocabIndex = 0;
+                this.vocabScore = 0;
+                this.renderVocabQuiz();
+            }
+
+            renderVocabQuiz() {
+                this.currentStage = 'vocab';
+                this.clearAllTimers();
+                this.vocabTimeLeft = 10;
+
+                const q = this.currentPassage.vocab[this.vocabIndex];
+                const container = document.getElementById('appContainer');
+
+                container.innerHTML = `
+                    <div class="max-w-2xl mx-auto bg-white rounded-3xl p-6 md:p-8 shadow-xl border-2 border-amber-100 relative overflow-hidden">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold text-amber-600 bg-amber-50 px-3 py-1.5 rounded-full border border-amber-200">
+                                Step 1. 핵심 어휘 익히기 (${this.vocabIndex + 1} / 10)
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                <i data-lucide="timer" class="w-5 h-5 text-rose-500 animate-pulse"></i>
+                                <span id="vocabTimerText" class="text-lg font-black text-rose-600 font-mono">10초</span>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-slate-100 h-2.5 rounded-full mb-8 overflow-hidden">
+                            <div class="bg-amber-400 h-full rounded-full transition-all duration-300" style="width: ${((this.vocabIndex + 1) / 10) * 100}%"></div>
+                        </div>
+
+                        <div class="text-center py-6 bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl border border-amber-200 mb-6 shadow-inner">
+                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-widest">Target Word</span>
+                            <h3 class="text-3xl md:text-4xl font-extrabold text-slate-800 mt-1 tracking-wide font-jua">${q.word}</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-4">
+                            ${q.options.map((opt, idx) => `
+                                <button onclick="app.checkVocabAnswer(${idx})" class="p-4 rounded-2xl border-2 border-slate-200 hover:border-amber-400 hover:bg-amber-50 text-left font-bold text-slate-700 transition flex items-center space-x-3 text-base shadow-sm">
+                                    <span class="w-7 h-7 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center text-xs font-black">${idx + 1}</span>
+                                    <span>${opt}</span>
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+
+                lucide.createIcons();
+                this.startVocabTimer();
+            }
+
+            startVocabTimer() {
+                const timerEl = document.getElementById('vocabTimerText');
+                this.vocabTimer = setInterval(() => {
+                    this.vocabTimeLeft--;
+                    audioSys.playTick();
+                    if (timerEl) timerEl.innerText = `${this.vocabTimeLeft}초`;
+
+                    if (this.vocabTimeLeft <= 0) {
+                        clearInterval(this.vocabTimer);
+                        this.showVocabFeedback(false, true);
+                    }
+                }, 1000);
+            }
+
+            checkVocabAnswer(selectedIdx) {
+                clearInterval(this.vocabTimer);
+                const q = this.currentPassage.vocab[this.vocabIndex];
+                const isCorrect = (selectedIdx === q.answer);
+
+                if (isCorrect) {
+                    this.vocabScore++;
+                    audioSys.playCorrect();
+                    this.showVocabFeedback(true);
+                } else {
+                    audioSys.playWrong();
+                    this.showVocabFeedback(false);
+                }
+            }
+
+            showVocabFeedback(isCorrect, isTimeout = false) {
+                const q = this.currentPassage.vocab[this.vocabIndex];
+                const correctAnswerText = q.options[q.answer];
+
+                const modal = document.getElementById('modalOverlay');
+                const content = document.getElementById('modalContent');
+
+                if (isCorrect) {
+                    confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } });
+                    content.innerHTML = `
+                        <div class="text-center py-4">
+                            <div class="w-16 h-16 bg-emerald-100 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                                <i data-lucide="check-circle" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800 font-jua">정답입니다! 🎉</h3>
+                            <p class="text-slate-600 mt-2 font-medium"><strong>${q.word}</strong> : ${correctAnswerText}</p>
+                            <button onclick="app.nextVocabQuestion()" class="mt-6 w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-xl font-bold transition shadow-md">
+                                다음 문제로 이동
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    content.innerHTML = `
+                        <div class="text-center py-4 animate-shake">
+                            <div class="w-16 h-16 bg-rose-100 text-rose-500 rounded-full flex items-center justify-center mx-auto mb-3 shadow-md">
+                                <i data-lucide="x-circle" class="w-10 h-10"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-800 font-jua">${isTimeout ? '시간 초과! ⏰' : '아쉽네요! 다시 시도해보세요.'}</h3>
+                            <p class="text-slate-600 mt-2 text-sm">정답은 <span class="text-emerald-600 font-bold">${correctAnswerText}</span> 입니다.</p>
+                            <button onclick="app.retryVocabQuestion()" class="mt-6 w-full py-3 bg-rose-500 hover:bg-rose-600 text-white rounded-xl font-bold transition shadow-md">
+                                이 문제 다시 풀기
+                            </button>
+                        </div>
+                    `;
+                }
+
+                modal.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            retryVocabQuestion() {
+                document.getElementById('modalOverlay').classList.add('hidden');
+                this.renderVocabQuiz();
+            }
+
+            nextVocabQuestion() {
+                document.getElementById('modalOverlay').classList.add('hidden');
+                this.vocabIndex++;
+                if (this.vocabIndex < 10) {
+                    this.renderVocabQuiz();
+                } else {
+                    this.compIndex = 0;
+                    this.compScore = 0;
+                    this.renderComprehensionQuiz();
+                }
+            }
+
+            renderComprehensionQuiz() {
+                this.currentStage = 'comp';
+                this.clearAllTimers();
+                
+                if (this.compIndex === 0) {
+                    this.compTimeLeft = 180;
+                }
+
+                const q = this.currentPassage.comprehension[this.compIndex];
+                const container = document.getElementById('appContainer');
+
+                container.innerHTML = `
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <!-- Left Panel: Reading Passage -->
+                        <div class="lg:col-span-6 bg-white rounded-3xl p-6 shadow-xl border-2 border-sky-100 flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                                <span class="text-xs font-bold px-3 py-1 rounded-full bg-sky-100 text-sky-800">Reading Booster 교재 원문</span>
+                                <span class="text-xs text-slate-400 font-bold">${this.currentPassage.title}</span>
+                            </div>
+                            <div class="prose max-w-none text-slate-700 leading-relaxed text-sm md:text-base font-serif bg-sky-50/50 p-5 rounded-2xl border border-sky-100 overflow-y-auto max-h-[380px] lg:max-h-[460px] whitespace-pre-line">
+                                ${this.currentPassage.text}
+                            </div>
+                        </div>
+
+                        <!-- Right Panel: Comprehension Question -->
+                        <div class="lg:col-span-6 bg-white rounded-3xl p-6 shadow-xl border-2 border-indigo-100 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-200">
+                                        Step 2. 독해 문제 (${this.compIndex + 1} / 3)
+                                    </span>
+                                    <div class="flex items-center space-x-2 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+                                        <i data-lucide="clock" class="w-4 h-4 text-rose-500 animate-spin"></i>
+                                        <span id="compTimerText" class="text-sm font-black text-rose-600 font-mono">03:00</span>
+                                    </div>
+                                </div>
+
+                                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-6 leading-snug font-jua">
+                                    ${q.question}
+                                </h3>
+
+                                <div class="space-y-3 mb-6">
+                                    ${q.options.map((opt, idx) => `
+                                        <button onclick="app.checkCompAnswer(${idx})" class="w-full p-4 rounded-2xl border-2 border-slate-200 hover:border-indigo-400 hover:bg-indigo-50 text-left text-sm md:text-base font-semibold text-slate-700 transition flex items-start space-x-3 shadow-sm">
+                                            <span class="w-6 h-6 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">${idx + 1}</span>
+                                            <span class="leading-relaxed">${opt}</span>
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <div class="text-xs text-slate-400 text-center font-medium bg-slate-50 p-3 rounded-xl border border-slate-100">
+                                💡 정답 선택 시 교재 해설 기반의 정답 근거가 공개됩니다.
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                lucide.createIcons();
+                this.startCompTimer();
+            }
+
+            startCompTimer() {
+                const timerEl = document.getElementById('compTimerText');
+                this.compTimer = setInterval(() => {
+                    this.compTimeLeft--;
+                    
+                    const min = String(Math.floor(this.compTimeLeft / 60)).padStart(2, '0');
+                    const sec = String(this.compTimeLeft % 60).padStart(2, '0');
+                    if (timerEl) timerEl.innerText = `${min}:${sec}`;
+
+                    if (this.compTimeLeft <= 0) {
+                        clearInterval(this.compTimer);
+                        this.showCompFeedback(false, true);
+                    }
+                }, 1000);
+            }
+
+            checkCompAnswer(selectedIdx) {
+                const q = this.currentPassage.comprehension[this.compIndex];
+                const isCorrect = (selectedIdx === q.answer);
+
+                if (isCorrect) {
+                    this.compScore++;
+                    audioSys.playCorrect();
+                    this.showCompFeedback(true);
+                } else {
+                    audioSys.playWrong();
+                    this.showCompFeedback(false);
+                }
+            }
+
+            showCompFeedback(isCorrect, isTimeout = false) {
+                const q = this.currentPassage.comprehension[this.compIndex];
+                const modal = document.getElementById('modalOverlay');
+                const content = document.getElementById('modalContent');
+
+                if (isCorrect) {
+                    confetti({ particleCount: 60, spread: 70, origin: { y: 0.6 } });
+                }
+
+                content.innerHTML = `
+                    <div class="py-2">
+                        <div class="flex items-center space-x-3 mb-3">
+                            <div class="w-10 h-10 rounded-full ${isCorrect ? 'bg-emerald-100 text-emerald-600' : 'bg-rose-100 text-rose-600'} flex items-center justify-center">
+                                <i data-lucide="${isCorrect ? 'check-circle' : 'alert-circle'}" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-800 font-jua">
+                                ${isCorrect ? '정답입니다! 👏' : (isTimeout ? '제한시간 초과!' : '오답입니다')}
+                            </h3>
+                        </div>
+
+                        <div class="bg-indigo-50 p-4 rounded-2xl border border-indigo-100 mb-4">
+                            <p class="text-xs font-bold text-indigo-700 uppercase mb-1">🔍 교재 해설 기반 정답 근거</p>
+                            <p class="text-sm text-slate-700 leading-relaxed font-medium">${q.rationale}</p>
+                        </div>
+
+                        <button onclick="app.nextCompQuestion()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition shadow-md">
+                            ${this.compIndex < 2 ? '다음 독해 문제로' : '요약 활동으로 이동 (Step 3)'}
+                        </button>
+                    </div>
+                `;
+
+                modal.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            nextCompQuestion() {
+                document.getElementById('modalOverlay').classList.add('hidden');
+                this.compIndex++;
+                if (this.compIndex < 3) {
+                    this.renderComprehensionQuiz();
+                } else {
+                    clearInterval(this.compTimer);
+                    this.renderSummaryActivity();
+                }
+            }
+
+            renderSummaryActivity() {
+                this.currentStage = 'summary';
+                this.clearAllTimers();
+                this.summaryTimeLeft = 240;
+
+                const p = this.currentPassage;
+                const container = document.getElementById('appContainer');
+
+                container.innerHTML = `
+                    <div class="max-w-3xl mx-auto bg-white rounded-3xl p-6 md:p-8 shadow-xl border-2 border-emerald-100">
+                        <div class="flex justify-between items-center mb-6">
+                            <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200">
+                                Step 3. 3-Key & 1-Sentence 요약하기
+                            </span>
+                            <div class="flex items-center space-x-2 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+                                <i data-lucide="timer" class="w-4 h-4 text-rose-500 animate-pulse"></i>
+                                <span id="summaryTimerText" class="text-sm font-black text-rose-600 font-mono">04:00</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-5 rounded-2xl border border-emerald-200 mb-6">
+                            <h3 class="text-lg font-bold text-slate-800 font-jua mb-2">📌 스캐폴딩 가이드 (Scaffolding Guide)</h3>
+                            <p class="text-sm text-slate-600 mb-3">지문의 핵심 키워드 3가지를 활용하여 전체 핵심 메시지를 **한 문장의 한국어**로 요약해보세요.</p>
+                            
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="text-xs font-semibold text-slate-500 self-center mr-1">추천 핵심 키워드:</span>
+                                ${p.scaffoldingKeywords.map(kw => `
+                                    <span class="px-3 py-1 bg-white rounded-lg border border-emerald-300 text-emerald-800 text-xs font-bold shadow-sm">
+                                        # ${kw}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+
+                        <div class="space-y-4 mb-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-600 mb-1">학번 (선택)</label>
+                                    <input type="text" id="studentNumInput" placeholder="예: 10101" class="w-full p-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:outline-none text-sm font-semibold">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-600 mb-1">학생 이름 <span class="text-rose-500">*</span></label>
+                                    <input type="text" id="studentNameInput" placeholder="예: 홍길동" class="w-full p-3 rounded-xl border-2 border-slate-200 focus:border-emerald-500 focus:outline-none text-sm font-semibold">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-bold text-slate-600 mb-1">한 문장 요약 작성 (한국어) <span class="text-rose-500">*</span></label>
+                                <textarea id="summarySentenceInput" rows="3" placeholder="제시된 키워드를 반영해 지문 주제를 완결된 한 문장으로 정리하세요." class="w-full p-4 rounded-2xl border-2 border-slate-200 focus:border-emerald-500 focus:outline-none text-sm font-medium leading-relaxed"></textarea>
+                            </div>
+                        </div>
+
+                        <button onclick="app.submitSummary()" class="w-full py-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white font-bold text-base shadow-lg shadow-emerald-200 transition flex items-center justify-center space-x-2">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                            <span>요약 제출 및 학습 완료하기</span>
+                        </button>
+                    </div>
+                `;
+
+                lucide.createIcons();
+                this.startSummaryTimer();
+            }
+
+            startSummaryTimer() {
+                const timerEl = document.getElementById('summaryTimerText');
+                this.summaryTimer = setInterval(() => {
+                    this.summaryTimeLeft--;
+                    
+                    const min = String(Math.floor(this.summaryTimeLeft / 60)).padStart(2, '0');
+                    const sec = String(this.summaryTimeLeft % 60).padStart(2, '0');
+                    if (timerEl) timerEl.innerText = `${min}:${sec}`;
+
+                    if (this.summaryTimeLeft <= 0) {
+                        clearInterval(this.summaryTimer);
+                        this.submitSummary(true);
+                    }
+                }, 1000);
+            }
+
+            submitSummary(isTimeout = false) {
+                const nameInput = document.getElementById('studentNameInput');
+                const numInput = document.getElementById('studentNumInput');
+                const sentenceInput = document.getElementById('summarySentenceInput');
+
+                const nameVal = nameInput ? nameInput.value.trim() : '';
+                const numVal = numInput ? numInput.value.trim() : '';
+                const summaryText = sentenceInput ? sentenceInput.value.trim() : '';
+
+                if (!isTimeout && !nameVal) {
+                    this.showNoticeModal('이름을 입력하세요', '학습 기록 작성을 위해 학생 이름을 반드시 입력해 주세요.');
+                    return;
+                }
+
+                if (!isTimeout && summaryText.length < 5) {
+                    this.showNoticeModal('문장을 완성해 주세요', '최소 5자 이상의 한 문장 요약이 필요합니다.');
+                    return;
+                }
+
+                clearInterval(this.summaryTimer);
+                const fullName = numVal ? `${nameVal} (${numVal})` : nameVal || '익명 학생';
+
+                this.studentRecords.unshift({
+                    name: fullName,
+                    passage: `${this.currentPassage.num}번 지문`,
+                    vocabScore: `${this.vocabScore}/10`,
+                    compScore: `${this.compScore}/3`,
+                    summary: summaryText || '(시간 초과 자동 제출)',
+                    date: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                });
+
+                audioSys.playCorrect();
+                confetti({ particleCount: 100, spread: 80, origin: { y: 0.5 } });
+
+                const container = document.getElementById('appContainer');
+                container.innerHTML = `
+                    <div class="max-w-2xl mx-auto bg-white rounded-3xl p-8 text-center shadow-2xl border-4 border-emerald-200">
+                        <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i data-lucide="award" class="w-10 h-10"></i>
+                        </div>
+
+                        <h2 class="text-3xl font-extrabold text-slate-800 font-jua mb-2">학습 완료! 수고하셨습니다 🎓</h2>
+                        <p class="text-slate-600 text-sm mb-6">${fullName} 학생의 기록이 교사 대시보드에 성공적으로 등록되었습니다.</p>
+
+                        <div class="bg-slate-50 p-5 rounded-2xl border border-slate-200 text-left space-y-4 mb-6">
+                            <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                <span class="text-sm font-semibold text-slate-600">어휘 퀴즈 점수</span>
+                                <span class="text-base font-black text-amber-600 font-mono">${this.vocabScore} / 10 점</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                                <span class="text-sm font-semibold text-slate-600">독해 문제 점수</span>
+                                <span class="text-base font-black text-indigo-600 font-mono">${this.compScore} / 3 점</span>
+                            </div>
+                            <div>
+                                <span class="text-xs font-bold text-slate-400 block mb-1">내가 작성한 한 문장 요약</span>
+                                <p class="text-sm text-slate-700 italic bg-white p-3 rounded-xl border border-slate-200">"${summaryText || '미작성'}"</p>
+                            </div>
+                            <div class="bg-emerald-50 p-3.5 rounded-xl border border-emerald-200">
+                                <span class="text-xs font-bold text-emerald-800 block mb-1">💡 예시 답안 (권장 요약)</span>
+                                <p class="text-sm text-emerald-900 font-medium">${this.currentPassage.sampleSummary}</p>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button onclick="app.navHome()" class="flex-1 py-3.5 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-bold transition shadow-md">
+                                다른 지문 학습하기
+                            </button>
+                            <button onclick="app.openDashboard()" class="flex-1 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-bold transition shadow-md">
+                                대시보드 확인하기
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                lucide.createIcons();
+            }
+
+            showNoticeModal(title, message) {
+                const modal = document.getElementById('modalOverlay');
+                const content = document.getElementById('modalContent');
+                content.innerHTML = `
+                    <div class="text-center py-4">
+                        <i data-lucide="alert-circle" class="w-12 h-12 text-amber-500 mx-auto mb-2"></i>
+                        <h3 class="text-xl font-bold text-slate-800 font-jua">${title}</h3>
+                        <p class="text-sm text-slate-600 mt-2">${message}</p>
+                        <button onclick="document.getElementById('modalOverlay').classList.add('hidden')" class="mt-4 px-6 py-2.5 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-bold">확인</button>
+                    </div>
+                `;
+                modal.classList.remove('hidden');
+                lucide.createIcons();
+            }
+
+            openDashboard() {
+                this.clearAllTimers();
+                this.currentStage = 'dashboard';
+                const container = document.getElementById('appContainer');
+
+                container.innerHTML = `
+                    <div class="space-y-6">
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-3xl shadow-md border border-slate-100">
+                            <div>
+                                <h2 class="text-2xl font-black text-slate-800 font-jua flex items-center gap-2">
+                                    <i data-lucide="layout-dashboard" class="w-6 h-6 text-indigo-600"></i>
+                                    교사용 학습 분석 대시보드
+                                </h2>
+                                <p class="text-xs text-slate-500 mt-1">Reading Booster 고난도 01회 (31~40번) 교재 기반 실시간 현황</p>
+                            </div>
+
+                            <div class="flex items-center space-x-3">
+                                <button onclick="app.shareToGoogleClassroom()" class="flex items-center space-x-2 px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl font-bold text-sm shadow-md transition">
+                                    <i data-lucide="share-2" class="w-4 h-4"></i>
+                                    <span>Google Classroom 공유</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-gradient-to-tr from-blue-50 to-indigo-50 p-5 rounded-2xl border border-blue-100 shadow-sm">
+                                <span class="text-xs font-bold text-blue-600">총 제출 건수</span>
+                                <h3 class="text-3xl font-black text-slate-800 font-mono mt-1">${this.studentRecords.length}건</h3>
+                            </div>
+                            <div class="bg-gradient-to-tr from-amber-50 to-orange-50 p-5 rounded-2xl border border-amber-100 shadow-sm">
+                                <span class="text-xs font-bold text-amber-600">어휘 평균 정답률</span>
+                                <h3 class="text-3xl font-black text-slate-800 font-mono mt-1">90%</h3>
+                            </div>
+                            <div class="bg-gradient-to-tr from-emerald-50 to-teal-50 p-5 rounded-2xl border border-emerald-100 shadow-sm">
+                                <span class="text-xs font-bold text-emerald-600">독해 완수율</span>
+                                <h3 class="text-3xl font-black text-slate-800 font-mono mt-1">96%</h3>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-3xl p-6 shadow-md border border-slate-100">
+                            <h3 class="text-lg font-bold text-slate-800 font-jua mb-4 flex items-center justify-between">
+                                <span>📋 학생 활동 현황</span>
+                                <span class="text-xs font-normal text-slate-400">실시간 연동</span>
+                            </h3>
+
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr class="bg-slate-50 text-slate-500 text-xs font-bold border-b border-slate-200">
+                                            <th class="p-3">학생명 (학번)</th>
+                                            <th class="p-3">학습 지문</th>
+                                            <th class="p-3 text-center">어휘 성적</th>
+                                            <th class="p-3 text-center">독해 성적</th>
+                                            <th class="p-3">한 문장 요약 작성 내용</th>
+                                            <th class="p-3 text-center">제출 시간</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-slate-100 text-sm">
+                                        ${this.studentRecords.map(r => `
+                                            <tr class="hover:bg-slate-50/80 transition">
+                                                <td class="p-3 font-bold text-slate-800">${r.name}</td>
+                                                <td class="p-3 text-slate-600 font-medium">${r.passage}</td>
+                                                <td class="p-3 text-center font-bold text-amber-600 font-mono">${r.vocabScore}</td>
+                                                <td class="p-3 text-center font-bold text-indigo-600 font-mono">${r.compScore}</td>
+                                                <td class="p-3 text-slate-700 italic max-w-xs truncate">${r.summary}</td>
+                                                <td class="p-3 text-center text-xs text-slate-400">${r.date}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                lucide.createIcons();
+            }
+
+            shareToGoogleClassroom() {
+                const currentUrl = window.location.href;
+                const shareUrl = `https://classroom.google.com/share?url=${encodeURIComponent(currentUrl)}&title=${encodeURIComponent('Reading Booster 고난도 01회 (31-40번) 영어 독해 과제')}`;
+                window.open(shareUrl, '_blank', 'width=600,height=600');
+            }
+        }
+
+        let app;
+        window.onload = () => {
+            app = new App();
+        };
+    </script>
+</body>
+</html>
